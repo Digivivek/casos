@@ -1,11 +1,17 @@
+# .htaccess (root)
 RewriteEngine On
 
-# Don’t rewrite if the request is already for index.php
+# Serve existing files/folders as-is
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Stop recursion if request already targets index.php
 RewriteCond %{REQUEST_URI} !^/index\.php$
+# Stop recursion if ?p= is already present
+RewriteCond %{QUERY_STRING} !(^|&)p=
+# Internally route everything else to index.php (NO redirect)
+RewriteRule ^(.+)$ index.php?p=$1 [L,QSA]
 
-# Serve existing files and folders directly
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-
-# Everything else goes to index.php (internal rewrite, no redirect)
-RewriteRule ^ index.php [L]
+# Root path -> index.php
+RewriteRule ^$ index.php [L]

@@ -19,7 +19,7 @@ if (isset($_GET['rp']) && is_string($_GET['rp']) && $_GET['rp'] !== '') $param =
 
 $path = $param !== null ? (string)$param : (string)$reqPath;
 $path = '/' . ltrim($path, '/');
-if ($path === '/index.php') { $path = '/'; }
+if ($path === 'index.php') { $path = '/'; }
 
 // Present a clean path to the app
 $_SERVER['REQUEST_URI'] = $path;

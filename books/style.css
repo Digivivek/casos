@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+  background: url(./images/lap.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Segoe UI", sans-serif;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+      url(./images/mob.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #f58020;
+}
+
+.btn-join {
+  background-color: #f58020;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-join:hover {
+  background-color: #da6e1c;
+}
+
+.hero-section {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    align-items: start;
+  }
+}
+
+.hero-section h1 {
+  font-size: 3.8rem;
+}
+
+.hero-section h1 .highlight {
+  color: #f58020;
+}
+
+.hero-section p {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.btn-place-bets {
+  margin-top: 1.5rem;
+  background-color: #8ef115;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 0.7rem 5rem;
+  border: none;
+  border-radius: 8px;
+}
+
+.btn-place-bets:hover {
+  background-color: #a0eb4f;
+}
+
+.promo-img {
+  width: 30%;
+  margin-top: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-text {
+    padding-top: 2rem;
+  }
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .hero-section h1 .highlight {
+    color: #f58020;
+  }
+
+  .hero-section p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+
+  .promo-img {
+    width: 100%;
+  }
+}
+
+.mlbszn-text {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin-top: 1rem;
+}
+footer {
+  text-align: center;
+  border-top: 1px solid #d2d0d0;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  max-width: max-content;
+  margin-inline: auto;
+  padding-inline: 30px;
+}
+.terms {
+  font-size: 1rem;
+  color: #ffff !important;
+}

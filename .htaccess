@@ -1,17 +1,13 @@
-# .htaccess (root)
 RewriteEngine On
 
-# Serve existing files/folders as-is
+# Serve files/dirs
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Stop recursion if request already targets index.php
-RewriteCond %{REQUEST_URI} !^/index\.php$
-# Stop recursion if ?p= is already present
-RewriteCond %{QUERY_STRING} !(^|&)p=
-# Internally route everything else to index.php (NO redirect)
-RewriteRule ^(.+)$ index.php?p=$1 [L,QSA]
+# If the raw request included /index.php, canonicalize to /
+RewriteCond %{THE_REQUEST} \s/+index\.php[?\s] [NC]
+RewriteRule ^index\.php$ / [R=301,L]
 
-# Root path -> index.php
-RewriteRule ^$ index.php [L]
+# Route everything else internally to index.php
+RewriteRule ^ index.php [L]

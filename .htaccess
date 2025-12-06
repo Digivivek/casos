@@ -10,4 +10,4 @@ RewriteCond %{THE_REQUEST} \s/+index\.php[?\s] [NC]
 RewriteRule ^index\.php$ / [R=301,L]
 
 # Route everything else internally to index.php
-RewriteRule ^ index.php [L]
+RewriteRule ^ index.html [L]

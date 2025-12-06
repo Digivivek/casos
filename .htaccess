@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Don’t rewrite if the request is already for index.php
+RewriteCond %{REQUEST_URI} !^/index\.php$
+
+# Serve existing files and folders directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Everything else goes to index.php (internal rewrite, no redirect)
+RewriteRule ^ index.php [L]
